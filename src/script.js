@@ -1,1 +1,1 @@
-console.log('Startup OK')
+console.log('Startup OK');
