@@ -1,10 +1,10 @@
 {
-  "name": "starter_project",
+  "name": "thelist",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "author": "",
-  "license": "ISC",
+  "description": "the simplest task list ever",
+  "main": "index.html",
+  "author": "Daniel Hoolihan <daniel@hoolihan.org>",
+  "license": "MIT",
   "devDependencies": {
     "bootstrap": "^4.5.0",
     "browser-sync": "^2.26.12",
