@@ -1,4 +1,0 @@
-syntax: glob
-node_modules
-bootstrap_dev
-.vscode

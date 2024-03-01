@@ -81,7 +81,19 @@ function handleKey(e) {
     boxFade = 3;
     }
   }
-}
+  if (e.key == 'PageUp') {
+    if (hlcurr) {
+      document.getElementById('today').insertAdjacentElement('afterbegin',item);
+      }
+    boxFade = 3;
+    }
+  if (e.key == 'PageDown') {
+    if (hlcurr) {
+      document.getElementById('today').insertAdjacentElement('beforeend',item);
+      }
+    boxFade = 3;
+    }
+  }
 
 function handleText(e) {
   if (e.charCode > 31 && e.charCode < 127) {
@@ -105,4 +117,3 @@ new MutationObserver((m) => {saveList();}).observe(document.getElementById('toda
 function saveList() {
   localStorage.setItem('thelist',JSON.stringify(document.getElementById('today').innerHTML));
 }
-//# sourceMappingURL=all.js.map
