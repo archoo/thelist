@@ -7,6 +7,7 @@ var popup = document.getElementById('popup');
 var curr = -1;
 var item = null;
 var hlcurr = false;
+var currElement = false;
 
 function showTxt() {
   ttFade -= 1;
@@ -82,17 +83,24 @@ function handleKey(e) {
     }
   }
   if (e.key == 'PageUp') {
-    if (hlcurr) {
-      document.getElementById('today').insertAdjacentElement('afterbegin',item);
-      }
-    boxFade = 3;
-    }
+    item = document.getElementsByTagName('span')[curr]
+    var copy = item.cloneNode(true);
+    curr--;
+    curr = Math.max(0,curr);
+    document.getElementsByTagName('span')[curr].before(copy);
+    item.remove();
+    item = copy;
+  }
   if (e.key == 'PageDown') {
-    if (hlcurr) {
-      document.getElementById('today').insertAdjacentElement('beforeend',item);
-      }
-    boxFade = 3;
-    }
+    item = document.getElementsByTagName('span')[curr]
+    copy = item.cloneNode(true);
+    var l = document.getElementsByTagName('span').length;
+    curr++
+    curr = Math.min(l-1,curr);
+    document.getElementsByTagName('span')[curr].after(copy);
+    item.remove();
+    item = copy;
+  }
   }
 
 function handleText(e) {
